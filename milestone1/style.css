@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    width: 100%;
+    height: 100vh;   
+} 
+.sfondo-sopra {
+    background-color: rgb(18, 140, 126);
+    height: 15vh;
+}
+.sfondo-sotto {
+    background-color: lightgray;
+    height: 85vh;
+} 
+#app {
+    display: flex;
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    height: 95vh;
+    width: 90vw;
+}
+aside {
+    width: 400px;
+    height: 100%;
+}
+#first-part-top {
+    height: 79px;
+    display: flex;
+    border-right: 1px solid lightgrey;
+    background-color: rgb(238, 235, 235);
+    justify-content: space-between; 
+    position: relative;
+}
+#user-avatar {
+    max-width: 50%;
+    max-height: 100%;
+}
+#avatar_io {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 8px;
+    left: 10px;      
+}
+#avatar_io img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+#username {
+    position: absolute;
+    top: 28px;
+    left: 70px;
+    margin-left: 0;
+    font-size: 18px;
+}
+#icons-top {
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    color: rgb(160, 160, 160);
+}
+#icons-top i {
+    padding-right: 30px;
+}
+#second-part-top {
+    height: 89px;
+    background-color: rgb(109, 210, 243);
+    position: relative;
+}
+#bell-off {
+    max-width: 30%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 15px;
+    left: 30px;   
+}
+#bell-off i {
+    font-size: 24px;
+    color: rgb(109, 210, 243);
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+#second-part-text {
+    max-width: 70%;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    font-size: 18px;
+}
+#second-part-text p a {
+    font-size: 15px;
+    color: rgb(104, 103, 103);
+}
+#third-part-top {
+    height: 59px;
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#search {
+   background-color: white;
+   display: flex;
+   width: 95%;
+   height: 40px;
+   border: 1px solid lightgray;
+}
+#search input {
+   width: 90%;
+   border-style: none;
+}
+#search ::placeholder {
+   font-size: 15px;
+   padding-left: 40px; 
+}
+#search i {
+   margin-top: 11px;
+   margin-left: 20px;
+   color: grey;
+}
+#users-list {
+    background-color: white;
+    height: 397px;
+    overflow-y: scroll;
+}
+#users-list ul {
+    list-style-type: none;
+}
+#users-list ul li {
+    padding-left: 20px;
+    min-height: 80px;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+}
+#users-list ul li img {
+   padding-top: 10px;
+   max-width: 60px;
+   border-radius: 50%;
+}
+#users-list ul li span {
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    padding-left: 20px;
+}
+#main-chat {
+    width: calc(100% - 400px);
+    height: 100%;
+}
+#user-chat {
+    height: 79px;
+    display: flex;
+    background-color: rgb(238, 235, 235);
+    justify-content: space-between; 
+    position: relative;
+}
+#user-michele {
+    max-width: 50%;
+    max-height: 100%;
+}
+#avatar-michele {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+#avatar-michele img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+#michele-text {
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    margin-left: 0;
+    font-size: 18px;
+    line-height: 1.4rem;
+}
+#michele-text p {
+    font-size: 14px;
+    color: grey;
+}
+#icons-chat-top {
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    color: rgb(160, 160, 160);
+}
+#icons-chat-top i {
+    padding-right: 30px;
+}
+#messages {
+    height: 466px;
+    background-image: url(../imgs/mine.jpg);
+    overflow-y: scroll;
+    position: relative;
+}
+.received {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+.send {
+    padding: 20px;
+    background-color: #DCF8C6;
+    border-radius: 10px;
+}
+#received1 {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+#send1 {
+    position: absolute;
+    top: 110px;
+    right: 50px;
+}
+#received2 {
+    position: absolute;
+    top: 180px;
+    left: 50px;
+}
+#send2 {
+    position: absolute;
+    top: 250px;
+    right: 50px;
+}
+#writing-space {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 79px;
+    background-color: rgb(233, 233, 233);
+}
+#writing-space i {
+    font-size: 26px;
+    color: grey;
+    width: 50px;
+    text-align: center;
+}
+#writing-space input {
+    height: 55px;
+    width: 650px;
+    border-style: none;
+    border-radius: 4px;
+}
+#writing-space ::placeholder {
+    font-size: 15px;
+    padding-left: 20px;
+}
