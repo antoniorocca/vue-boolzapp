@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <title>Vue boolzapp</title>
+ </head>
+ <body>
+     <div class="container">
+         <div class="sfondo-sopra"></div>
+         <div class="sfondo-sotto"></div>
+         <div id="app">
+             <aside>
+                 <div class="sidebar-top">
+                     <div id="first-part-top">
+                         <div id="user-avatar">
+                             <div id="avatar_io"> <img src="../imgs/avatar_io.jpg" alt=""> </div>
+                             <span id="username">Nome Utente</span>
+                         </div>                                                                                                  
+                         <div id="icons-top"> 
+                             <i class="fas fa-circle-notch"></i> <i class="fas fa-comment-alt"></i> <i class="fas fa-ellipsis-v"></i> 
+                         </div>
+                     </div>
+                     <div id="second-part-top">
+                         <div id="bell-off"><i class="fas fa-bell-slash"></i></div>
+                         <div id="second-part-text">
+                             <p>Ricevi notifiche di nuovi messaggi</p>
+                             <p><a href="">Attiva notifiche desktop</a></p>
+                         </div>                         
+                     </div>
+                     <div id="third-part-top">
+                         <div id="search">
+                             <i class="fas fa-search"></i>
+                             <input type="text" placeholder="Cerca o inizia una nuova chat">
+                         </div>
+                     </div>
+                 </div>               
+                 <div id="users-list">
+                     <ul>
+                         <li v-for="(contact, index) in contacts" @click="selezionaContatto(index)">
+                             <img :src=" '../imgs/avatar' + contact.avatar + '.jpg' ">
+                             <span>{{contact.name}}</span>
+                         </li>
+                     </ul>
+                 </div> 
+             </aside>
+             <div id="main-chat">
+                 <div id="user-chat">
+                     <div id="utente-attivo">
+                         <div id="avatar-attivo"><img :src=" '../imgs/avatar' + contactSelected[0].avatar + '.jpg' "></div>
+                         <div id="accesso-text">
+                             <span>{{contactSelected[0].name}}</span>
+                             <p>Ultimo accesso oggi alle</p>
+                         </div>
+                     </div>
+                     <div id="icons-chat-top">
+                         <i class="fas fa-search"></i> <i class="fas fa-paperclip"></i> <i class="fas fa-ellipsis-v"></i> 
+                     </div>
+                 </div>
+                 <div id="messages-container">
+                     <div id="chat-messages" v-for="message in contactSelected[0].messages">
+                         <div v-if="message.status == 'sent'" class="send messaggio">
+                             <p class="text-message">{{message.text}}</p>
+                             <span class="date-message">{{message.date}}</span> 
+                         </div>
+                         <div v-else class="received messaggio">
+                             <p class="text-message">{{message.text}}</p>
+                             <span class="date-message">{{message.date}}</span>        
+                         </div>
+                     </div>
+                 </div>
+                 <div id="writing-space">
+                     <i class="far fa-smile"></i>
+                     <input type="text" placeholder="Scrivi un messaggio">
+                     <i class="fas fa-microphone"></i>             
+                 </div>
+             </div>
+         </div>
+     </div>    
+     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+     <script src="main.js"></script>
+ </body>
+</html>
