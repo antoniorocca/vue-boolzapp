@@ -39,7 +39,7 @@
                  </div>               
                  <div id="users-list">
                      <ul>
-                         <li v-for="(contact, index) in contacts" @click="selezionaContatto(index)">
+                         <li v-for="(contact, index) in contacts" @click="selezionaContatto(index)" v-if="contact.visible">
                              <img :src=" '../imgs/avatar' + contact.avatar + '.jpg' ">
                              <span>{{contact.name}}</span>
                          </li>
@@ -49,9 +49,9 @@
              <div id="main-chat">
                  <div id="user-chat">
                      <div id="utente-attivo">
-                         <div id="avatar-attivo"><img :src=" '../imgs/avatar' + contactSelected[0].avatar + '.jpg' "></div>
+                         <div id="avatar-attivo"><img :src=" '../imgs/avatar' + contactActive[0].avatar + '.jpg' "></div>
                          <div id="accesso-text">
-                             <span>{{contactSelected[0].name}}</span>
+                             <span>{{contactActive[0].name}}</span>
                              <p>Ultimo accesso oggi alle</p>
                          </div>
                      </div>
@@ -60,7 +60,7 @@
                      </div>
                  </div>
                  <div id="messages-container">
-                     <div id="chat-messages" v-for="message in contactSelected[0].messages">
+                     <div id="chat-messages" v-for="message in contactActive[0].messages">
                          <div v-if="message.status == 'sent'" class="send messaggio">
                              <p class="text-message">{{message.text}}</p>
                              <span class="date-message">{{message.date}}</span> 

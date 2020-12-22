@@ -86,7 +86,7 @@ let app = new Vue({
                ],
            },
         ],
-       contactSelected: [
+       contactActive: [
          { 
            name: 'Michele', 
            avatar: '_1', 
@@ -115,9 +115,9 @@ let app = new Vue({
       },
       methods: {
         selezionaContatto(index) {
-          this.contactSelected = [];
+          this.contactActive = [];
           this.index = index;
-          this.contactSelected.push(this.contacts[index]);      
+          this.contactActive.push(this.contacts[index]);      
         },
         inviaMessaggio() {
           let nuovoMessaggio = {
@@ -125,14 +125,14 @@ let app = new Vue({
             text: this.newMessage,
             status: 'sent',
           }
-          this.contactSelected[0].messages.push(nuovoMessaggio);
+          this.contactActive[0].messages.push(nuovoMessaggio);
           this.newMessage = '';
           let replyMessage = {
             date: this.completeDateHour(),
             text: 'ok',
             status: 'received',
           }
-          setTimeout(this.contactSelected[0].messages.push(replyMessage), 1000);
+          setTimeout(this.contactActive[0].messages.push(replyMessage), 1000);
         },
         completeDateHour() {
           let date = new Date();
@@ -144,14 +144,14 @@ let app = new Vue({
           let seconds = date.getSeconds(0);
           return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
         },
-        cercaContatto() {
-          this.contacts.forEach(contact => {
-            if (contact.name.toLowerCase().includes(textSearch.toLowerCase())) {
-                contact.visible = true;
-            } else {
-                contact.visible = false;
-            }
+        cercaContatto() {      
+           this.contacts.forEach((item) => {
+              if (item.name.toLowerCase().includes(this.textSearch.toLowerCase())) {
+                item.visible = true;
+              } else {
+                item.visible = false;
+              }
           });
-        }
-     }
+        },
+      }
 });
